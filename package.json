@@ -1,0 +1,29 @@
+{
+  "name": "tic-tac-toe",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "dev": "nodemon app.js",
+    "ui": "browser-sync start --proxy 'localhost:3000' --files 'src' --no-ui",
+    "dev-ui": "npm run ui & npm run dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexmarcus22/Tic-Tac-Toe.git"
+  },
+  "author": "Marcus Alexandru",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alexmarcus22/Tic-Tac-Toe/issues"
+  },
+  "homepage": "https://github.com/alexmarcus22/Tic-Tac-Toe#readme",
+  "devDependencies": {
+    "express": "^4.17.1"
+  },
+  "dependencies": {
+    "browser-sync": "^2.26.14",
+    "express-handlebars": "^5.2.1"
+  },
+  "type": "module"
+}
