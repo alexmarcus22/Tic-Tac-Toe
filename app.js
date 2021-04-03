@@ -17,6 +17,8 @@ app.engine(
   })
 );
 
+app.use(express.static("./app/build"));
+
 app.get("/", (rq, rs) => {
   rs.render("home.hbs");
 });
