@@ -46,7 +46,7 @@ export const style = () => {
       })
     )
     .pipe(cssnano())
-    .pipe(sourceMaps.write("."))
+    .pipe(sourceMaps.write("maps"))
     .pipe(dest(paths.dist + "css"))
     .pipe(browsersync.stream());
 };
@@ -67,7 +67,7 @@ export const js = () => {
         extname: ".min.js",
       })
     )
-    .pipe(sourceMaps.write("."))
+    .pipe(sourceMaps.write("maps"))
     .pipe(dest("./app/build/js"))
     .pipe(browsersync.stream());
 };
@@ -75,13 +75,12 @@ export const js = () => {
 export const watchFiles = () => {
   watch(paths.src + "sass/**/*.scss", style);
   watch(paths.src + "js/**/*.js", js);
-  // watch("./assets/images/*"), img);
+  watch("./app/views/**/*.hbs").on("change", browsersync.reload);
 };
 
 export const browserSync = () => {
   browsersync.init({
     proxy: "localhost:3000",
-    notify: false,
     open: false,
   });
 };
